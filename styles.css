@@ -18,13 +18,16 @@ body {
     justify-items: center;
     align-items: center;
 }
+
 .door {
-    width: 100px;
     height: 100px;
-    border: 1px solid #ccc;
+    width: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
+    padding: 10px;
+    box-sizing: border-box;
 }
 .door:hover {
     transform: scale(1.05);
