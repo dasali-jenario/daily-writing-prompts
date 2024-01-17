@@ -49,6 +49,8 @@ for (let i = 1; i <= 31; i++) {
     container.appendChild(door);
 
     door.addEventListener('click', () => {
-        alert(prompts[i - 1]);
+        if (door.classList.contains('current')) {
+            door.textContent = prompts[i - 1];
+        }
     });
 }
