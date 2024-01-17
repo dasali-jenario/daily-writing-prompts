@@ -35,3 +35,15 @@ body {
 .door:active {
     background-color: #d0d0d0;
 }
+
+.door.past {
+    background-color: grey;
+}
+
+.door.present {
+    background-color: #93C572; /* Pistachio green */
+}
+
+.door.future {
+    background-color: #FDFD96; /* Soft yellow */
+}

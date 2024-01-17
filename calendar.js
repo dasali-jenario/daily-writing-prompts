@@ -35,24 +35,32 @@ const prompts = [
     "Describe a person who inspires you and why."
 ];
 
+
 const container = document.querySelector('#doors-container');
 const today = new Date();
 const month = today.getMonth();
 const year = today.getFullYear();
 const daysInMonth = new Date(year, month + 1, 0).getDate();
+const currentDay = today.getDate();
 
 for (let i = 1; i <= daysInMonth; i++) {
     const door = document.createElement('div');
     door.id = i;
     door.className = 'door';
     door.textContent = i;
-    if (i === today.getDate()) {
-        door.classList.add('current');
+
+    if (i < currentDay) {
+        door.classList.add('past');
+    } else if (i === currentDay) {
+        door.classList.add('present');
+    } else {
+        door.classList.add('future');
     }
+
     container.appendChild(door);
 
     door.addEventListener('click', () => {
-        if (door.classList.contains('current')) {
+        if (door.classList.contains('present')) {
             door.textContent = prompts[i - 1];
         }
     });
