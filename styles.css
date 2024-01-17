@@ -53,6 +53,7 @@ body {
     text-align: center;
     padding: 10px;
     box-sizing: border-box;
+    font-size: calc(100px / 3); /* Adjust as needed */
 }
 
 .door:hover {
