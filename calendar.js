@@ -35,8 +35,15 @@ const prompts = [
     "Describe a person who inspires you and why."
 ];
 
-const doors = document.querySelectorAll('.door');
-doors.forEach(door => {
+const container = document.querySelector('#doors-container');
+
+for (let i = 1; i <= 31; i++) {
+    const door = document.createElement('div');
+    door.id = i;
+    door.className = 'door';
+    door.textContent = i;
+    container.appendChild(door);
+
     door.addEventListener('click', () => {
         const day = parseInt(door.id);
         const today = new Date().getDate();
@@ -44,4 +51,4 @@ doors.forEach(door => {
             alert(prompts[day - 1]);
         }
     });
-});
+}
