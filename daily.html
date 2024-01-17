@@ -9,25 +9,4 @@
     <div id="doors-container"></div>
     <script src="calendar.js"></script>
 </body>
- 
-
-    <script>
-        // Get the current date
-        var currentDate = new Date();
-
-        // Get the number of days in the current month
-        var daysInMonth = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 0).getDate();
-
-        // Generate the doors
-        var doorsContainer = document.getElementById("doors-container");
-        for (var i = 1; i <= daysInMonth; i++) {
-            var door = document.createElement("div");
-            door.id = i;
-            door.className = "door";
-            door.innerText = i;
-            doorsContainer.appendChild(door);
-        }
-    </script>
-    <script src="calendar.js"></script>
-</body>
 </html>
