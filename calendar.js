@@ -42,6 +42,22 @@ const month = today.getMonth();
 const year = today.getFullYear();
 const daysInMonth = new Date(year, month + 1, 0).getDate();
 const currentDay = today.getDate();
+const modal = document.getElementById('prompt-modal');
+const promptTitle = document.getElementById('prompt-title');
+const promptAnswer = document.getElementById('prompt-answer');
+
+door.addEventListener('click', function() {
+    if (day <= currentDay) {
+        promptTitle.textContent = prompts[day - 1];
+        modal.style.display = 'block';
+    }
+});
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = 'none';
+    }
+}
 
 for (let i = 1; i <= daysInMonth; i++) {
     const door = document.createElement('div');
