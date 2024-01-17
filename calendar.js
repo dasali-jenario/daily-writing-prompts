@@ -36,14 +36,17 @@ const prompts = [
 ];
 
 const container = document.querySelector('#doors-container');
-const today = new Date().getDate();
+const today = new Date();
+const month = today.getMonth();
+const year = today.getFullYear();
+const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-for (let i = 1; i <= 31; i++) {
+for (let i = 1; i <= daysInMonth; i++) {
     const door = document.createElement('div');
     door.id = i;
     door.className = 'door';
     door.textContent = i;
-    if (i === today) {
+    if (i === today.getDate()) {
         door.classList.add('current');
     }
     container.appendChild(door);
