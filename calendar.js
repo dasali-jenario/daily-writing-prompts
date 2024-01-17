@@ -36,23 +36,19 @@ const prompts = [
 ];
 
 const container = document.querySelector('#doors-container');
+const today = new Date().getDate();
 
 for (let i = 1; i <= 31; i++) {
     const door = document.createElement('div');
     door.id = i;
     door.className = 'door';
     door.textContent = i;
+    if (i === today) {
+        door.classList.add('current');
+    }
     container.appendChild(door);
 
     door.addEventListener('click', () => {
-        const day = parseInt(door.id);
-        const today = new Date().getDate();
-        if (day === today) {
-            alert(prompts[day - 1]);
-        } else if (day < today) {
-            alert("This door has already been opened.");
-        } else {
-            alert("This door is not yet available to be opened.");
-        }
+        alert(prompts[i - 1]);
     });
 }
